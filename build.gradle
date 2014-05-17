@@ -1,11 +1,14 @@
 apply plugin: 'eclipse'
 apply plugin: 'java'
-apply plugin: 'artifactory-publish'
+apply plugin: 'artifactory'
 apply plugin: 'project-report'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
+
+group='elgregos'
+version='1.0.0'
 
 buildscript {
 	repositories {
@@ -69,5 +72,9 @@ dependencies {
 	compile 'org.slf4j:slf4j-api:1.7.6'	
 	testCompile group:'elgregos', name:'test-framework', version:'1.0.0', changing: true
 	testRuntime 'org.wildfly:wildfly-arquillian-container-embedded:8.0.0.Final'
+}
+
+artifactoryPublish {
+    publishConfigs ('archives')
 }
 
