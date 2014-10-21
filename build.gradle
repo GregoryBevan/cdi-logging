@@ -4,11 +4,11 @@ apply plugin: 'artifactory'
 apply plugin: 'project-report'
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.11'
+    gradleVersion = '2.1'
 }
 
-group='elgregos'
-version='1.0.0'
+group='com.elgregos'
+version='2.0.0'
 
 buildscript {
 	repositories {
@@ -29,7 +29,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:2.2.3'	
+		classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:2.2.5'	
 	}
 }
 
@@ -71,7 +71,7 @@ configurations.all {
 dependencies {
 	compile 'javax:javaee-api:7.0'
 	compile 'org.slf4j:slf4j-api:1.7.6'	
-	testCompile group:'elgregos', name:'test-framework', version:'1.0.0', changing: true
+	testCompile group:'com.elgregos', name:'test-framework', version:'1.0.0', changing: true
 	testRuntime 'org.wildfly:wildfly-arquillian-container-embedded:8.0.0.Final'
 }
 
