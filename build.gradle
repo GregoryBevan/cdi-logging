@@ -17,14 +17,14 @@ plugins {
 sourceCompatibility = '8'
 
 repositories {
-	mavenLocal()
+	maven { url "http://dl.bintray.com/gregorybevan/maven" }
 	jcenter() 
 }
 
 dependencies {
 	compile 'javax:javaee-api:7.0'
 	compile 'org.slf4j:slf4j-api:1.7.7'	
-	testCompile 'com.elgregos:test-framework:2.0.0-SNAPSHOT'
+	testCompile 'com.elgregos:test-framework:2.0.1'
 }
 
 test {
